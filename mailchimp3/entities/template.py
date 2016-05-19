@@ -9,11 +9,11 @@ class Template(BaseApi):
         self.endpoint = 'templates'
         self.list_id = None
 
-    def all(self):
+    def all(self, **kwargs):
         """
         returns a list of available templates.
         """
-        return self._mc_client._get(url=self.endpoint)
+        return self._mc_client._get(url=self.endpoint, **kwargs)
 
     def get(self, template_id):
         """
